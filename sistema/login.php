@@ -1,4 +1,7 @@
 <?php
+// Cookie da sessão com SameSite=Lax e HttpOnly (mesmo motivo do inc/base.php)
+session_set_cookie_params(['httponly' => true, 'samesite' => 'Lax']);
+
 // Inicia a sessão para manter estados de login
 session_start();
 // Se o usuário já estiver logado, redireciona para a página principal

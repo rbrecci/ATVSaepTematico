@@ -1,6 +1,10 @@
 <?php
 // Cabeçalho comum das páginas internas: sessão, expiração, banco e funções de apoio.
 
+// SameSite=Lax: o navegador não manda a sessão em POST vindo de outro site (CSRF).
+// HttpOnly: o JavaScript da página não consegue ler o cookie da sessão.
+session_set_cookie_params(['httponly' => true, 'samesite' => 'Lax']);
+
 // Inicia a sessão para verificar se o usuário está autenticado
 session_start();
 
