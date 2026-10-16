@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1130 480" width="1130" height="480" font-family="Georgia, 'Times New Roman', serif">
+  <title>DER do Grimório do Mestre</title>
+  <rect width="1130" height="480" fill="#f1e3bd"/>
+  <text x="565" y="38" text-anchor="middle" font-size="22" font-weight="bold" fill="#3a2314" letter-spacing="2">GRIMÓRIO DO MESTRE: DER</text>
+
+  <!-- jogador -->
+  <g>
+    <rect x="30" y="70" width="250" height="140" fill="#f8efd4" stroke="#3a2314" stroke-width="2"/>
+    <rect x="30" y="70" width="250" height="36" fill="#3a2314"/>
+    <text x="155" y="94" text-anchor="middle" font-size="16" font-weight="bold" fill="#f1e3bd" letter-spacing="1">jogador</text>
+    <g font-size="14" fill="#3a2314">
+      <text x="44" y="127"><tspan font-weight="bold" fill="#8b1d1d">PK</tspan>  id</text>
+      <text x="44" y="153">nome</text>
+      <text x="44" y="179">telefone</text>
+      <text x="44" y="205">email</text>
+    </g>
+  </g>
+
+  <!-- personagem -->
+  <g>
+    <rect x="440" y="70" width="250" height="192" fill="#f8efd4" stroke="#3a2314" stroke-width="2"/>
+    <rect x="440" y="70" width="250" height="36" fill="#3a2314"/>
+    <text x="565" y="94" text-anchor="middle" font-size="16" font-weight="bold" fill="#f1e3bd" letter-spacing="1">personagem</text>
+    <g font-size="14" fill="#3a2314">
+      <text x="454" y="127"><tspan font-weight="bold" fill="#8b1d1d">PK</tspan>  id</text>
+      <text x="454" y="153"><tspan font-weight="bold" fill="#8b1d1d">FK</tspan>  jogador_id</text>
+      <text x="454" y="179">nome</text>
+      <text x="454" y="205">raca</text>
+      <text x="454" y="231">classe</text>
+      <text x="454" y="257">nivel</text>
+    </g>
+  </g>
+
+  <!-- registro_sessao -->
+  <g>
+    <rect x="850" y="70" width="250" height="192" fill="#f8efd4" stroke="#3a2314" stroke-width="2"/>
+    <rect x="850" y="70" width="250" height="36" fill="#3a2314"/>
+    <text x="975" y="94" text-anchor="middle" font-size="16" font-weight="bold" fill="#f1e3bd" letter-spacing="1">registro_sessao</text>
+    <g font-size="14" fill="#3a2314">
+      <text x="864" y="127"><tspan font-weight="bold" fill="#8b1d1d">PK</tspan>  id</text>
+      <text x="864" y="153"><tspan font-weight="bold" fill="#8b1d1d">FK</tspan>  personagem_id</text>
+      <text x="864" y="179">data_sessao</text>
+      <text x="864" y="205">titulo</text>
+      <text x="864" y="231">resumo</text>
+      <text x="864" y="257">xp_ganho</text>
+    </g>
+  </g>
+
+  <!-- usuarios -->
+  <g>
+    <rect x="30" y="320" width="250" height="114" fill="#f8efd4" stroke="#3a2314" stroke-width="2" stroke-dasharray="6 4"/>
+    <rect x="30" y="320" width="250" height="36" fill="#6b4a2e"/>
+    <text x="155" y="344" text-anchor="middle" font-size="16" font-weight="bold" fill="#f1e3bd" letter-spacing="1">usuarios</text>
+    <g font-size="14" fill="#3a2314">
+      <text x="44" y="377"><tspan font-weight="bold" fill="#8b1d1d">PK</tspan>  id</text>
+      <text x="44" y="403">nome (único)</text>
+      <text x="44" y="429">senha (hash)</text>
+    </g>
+    <text x="300" y="382" font-size="13" font-style="italic" fill="#6b4a2e">login do sistema, sem relacionamento</text>
+  </g>
+
+  <!-- jogador 1 : N personagem -->
+  <g stroke="#3a2314" stroke-width="2" fill="none">
+    <line x1="280" y1="150" x2="440" y2="150"/>
+    <line x1="298" y1="138" x2="298" y2="162"/>
+    <line x1="306" y1="138" x2="306" y2="162"/>
+    <line x1="418" y1="150" x2="440" y2="132"/>
+    <line x1="418" y1="150" x2="440" y2="150"/>
+    <line x1="418" y1="150" x2="440" y2="168"/>
+  </g>
+  <text x="360" y="138" text-anchor="middle" font-size="14" font-style="italic" fill="#3a2314">possui</text>
+  <text x="360" y="172" text-anchor="middle" font-size="12" fill="#6b4a2e">1 : N</text>
+  <text x="360" y="188" text-anchor="middle" font-size="11" fill="#6b4a2e">ON DELETE CASCADE</text>
+
+  <!-- personagem 1 : N registro_sessao -->
+  <g stroke="#3a2314" stroke-width="2" fill="none">
+    <line x1="690" y1="150" x2="850" y2="150"/>
+    <line x1="708" y1="138" x2="708" y2="162"/>
+    <line x1="716" y1="138" x2="716" y2="162"/>
+    <line x1="828" y1="150" x2="850" y2="132"/>
+    <line x1="828" y1="150" x2="850" y2="150"/>
+    <line x1="828" y1="150" x2="850" y2="168"/>
+  </g>
+  <text x="770" y="138" text-anchor="middle" font-size="14" font-style="italic" fill="#3a2314">escreve</text>
+  <text x="770" y="172" text-anchor="middle" font-size="12" fill="#6b4a2e">1 : N</text>
+  <text x="770" y="188" text-anchor="middle" font-size="11" fill="#6b4a2e">ON DELETE CASCADE</text>
+
+  <text x="565" y="460" text-anchor="middle" font-size="12" fill="#6b4a2e">PK = chave primária · FK = chave estrangeira · cada personagem pertence a um jogador e cada registro a um personagem</text>
+</svg>
